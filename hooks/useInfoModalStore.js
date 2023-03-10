@@ -1,25 +1,10 @@
-import { useState } from "react";
+import { create } from "zustand";
 
-const useInfoModalStore = () => {
-  const [movieId, setMovieId] = useState();
-  const [isOpen, setIsOpen] = useState(false);
-
-  const openModal = (movieId) => {
-    setIsOpen(true);
-    setMovieId(movieId);
-  };
-
-  const closeModal = () => {
-    setIsOpen(false);
-    setMovieId();
-  };
-
-  return {
-    movieId,
-    isOpen,
-    openModal,
-    closeModal,
-  };
-};
+const useInfoModalStore = create((set) => ({
+  movieId: undefined,
+  isOpen: false,
+  openModal: (movieId) => set({ isOpen: true, movieId }),
+  closeModal: () => set({ isOpen: false, movieId: undefined }),
+}));
 
 export default useInfoModalStore;

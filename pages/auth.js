@@ -51,8 +51,8 @@ const Auth = () => {
           <Image
             src="/images/logo.png"
             alt="Logo"
-            width={80}
-            height={48}
+            width={70}
+            height={28}
             priority
           />
         </nav>

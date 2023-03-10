@@ -15,7 +15,7 @@ export default NextAuth({
         },
         password: {
           label: "Password",
-          type: "passord",
+          type: "password",
         },
       },
 
@@ -50,12 +50,10 @@ export default NextAuth({
   pages: {
     signIn: "/auth",
   },
-  debug: process.env.NODE_ENV === "development",
   session: {
     strategy: "jwt",
   },
   jwt: {
     secret: process.env.NEXTAUTH_JWT_SECRET,
   },
-  secret: process.env.NEXTAUTH_SECRET,
 });

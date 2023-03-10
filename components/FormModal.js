@@ -1,6 +1,7 @@
 import useMovies from "@/hooks/useMovieList";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import axios from "axios";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import Input from "./Input";
 
@@ -16,7 +17,6 @@ const FormModal = ({ setShowForm, movieData }) => {
       duration: "",
     }
   );
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { title, description, videoUrl, thumbnailUrl, genre, duration } =
